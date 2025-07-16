@@ -62,10 +62,11 @@ const [tasks, setTasks] = useLocalStorage('smartTasks', []);
 
   return (
     <div className={`min-h-screen transition-all duration-300 ${
-      darkMode 
-        ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900' 
-        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
-    }`}>
+  darkMode 
+    ? 'bg-gradient-to-br from-[#010409] to-[#0D1117]' 
+    : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+}`}>
+
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
@@ -126,7 +127,9 @@ const [tasks, setTasks] = useLocalStorage('smartTasks', []);
         <div className="space-y-4">
           {filteredTasks.length === 0 ? (
             <div className={`text-center py-12 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-              <div className="text-6xl mb-4">📝</div>
+              <div className="text-6xl mb-4">
+  {/* <Pencil className="w-16 h-16" /> */}
+</div>
               <p className="text-xl">
                 {searchTerm ? 'No tasks found matching your search' : 'No tasks yet. Add one above!'}
               </p>
